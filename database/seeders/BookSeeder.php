@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\book;
+use App\Models\Book;
 use Illuminate\Database\Seeder;
 
 class BookSeeder extends Seeder
