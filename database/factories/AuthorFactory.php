@@ -1,0 +1,22 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class AuthorFatoryFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            //can be ->name or ->name()
+            'name' => $this->faker->name()
+            
+        ];
+    }
+}
