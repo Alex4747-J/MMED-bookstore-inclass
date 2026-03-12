@@ -16,7 +16,7 @@ class BookController extends Controller
         //return book:all()->toJson();
 
         $books= Book::all()->toArray();
-        return json_encode([$books]);
+        return json_encode($books);
     }
 
     //Dependency Injection: Laravel will automatically inject the $id parameter from the route into this method
