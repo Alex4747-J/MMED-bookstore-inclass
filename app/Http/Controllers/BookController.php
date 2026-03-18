@@ -77,8 +77,6 @@ class BookController extends Controller
 
         $book = Book::create([
             'title' => $title,
-            'author_id' => $authorId,
-            'publisher_id' => $publisherId
         ]); // create does both in the same step
 
         //$book = Book::create($request->all());
