@@ -13,6 +13,11 @@ class Book extends Model
     // If your primary key is not 'id', you need to specify it like this:
     protected $primaryKey = 'book_id';
 
+    protected $fillable = [
+        'title',
+        'author_id',
+    ];
+
     public function author() : BelongsTo
     {
         return $this->belongsTo(Author::class);

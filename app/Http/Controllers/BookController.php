@@ -64,4 +64,30 @@ class BookController extends Controller
        
     }
 
+    public function store(Request $request)
+    {   
+        $title = $request->input('title');
+        $authorId = $request->input('author_id', null);
+        $publisherId = $request->input('publisher_id', null);
+
+
+        //$book = new Book([]);
+        //$book = Book::make([]); ::make() is the same as new Class() (only for models)
+        //$book->save(); if you "new Mode" or ::make() a model, you have to call ->save()
+
+        $book = Book::create([
+            'title' => $title,
+            'author_id' => $authorId,
+            'publisher_id' => $publisherId
+        ]); // create does both in the same step
+
+        //$book = Book::create($request->all());
+
+        $book->author()->associate($authorId);
+        $book->save();
+
+        return $book;
+
+    }
 }
+

@@ -24,7 +24,15 @@ Route::get('/', function () {
     return json_encode(['hello' => 'World']);
 });
 
-//"" class prints the FQN, which is APP\HTTP\CONTROLLERS\BOOKCONTROLLER
+//"" class prints the FQCN, which is APP\HTTP\CONTROLLERS\BOOKCONTROLLER
 Route::get('/books', [BookController::class, 'index']);
 
 Route::get('/books/{book}', [BookController::class, 'show']);
+
+// INDEX: list resources 
+// SHOW: single resrouces
+// STORE: create a new resource
+//UPDATE: update an existing resource
+//DELETE: deleting / destroying an existing resource
+
+Route::post('/books', [BookController::class, 'store']);
