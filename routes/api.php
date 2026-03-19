@@ -36,3 +36,8 @@ Route::get('/books/{book}', [BookController::class, 'show']);
 //DELETE: deleting / destroying an existing resource
 
 Route::post('/books', [BookController::class, 'store']);
+
+// PUT -- the ENTIRE object must be provided, meaning any missing fields are updated to null
+// PATCh = change whatever fields are provided, and leave the rest alone!
+
+Route::patch('books/{book}', [BookController::class, 'update']);
